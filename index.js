@@ -2,9 +2,9 @@ const express = require("express")
 require("dotenv").config()
 const cors = require("cors")
 const app = express()
-const connectToMongo = require("./utils/mongodb")
+// const connectToMongo = require("./utils/mongodb")
 
-connectToMongo()
+// connectToMongo()
 
 app.use(cors({
     origin: "*"
