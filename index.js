@@ -2,6 +2,9 @@ const express = require("express")
 require("dotenv").config()
 const cors = require("cors")
 const app = express()
+const connectToMongo = require("./utils/mongodb")
+
+connectToMongo()
 
 app.use(cors({
     origin: "*"
@@ -9,7 +12,7 @@ app.use(cors({
 
 app.use(express.urlencoded({ extended: true })); 
 app.use(express.json())
-app.use("/api/products", require("./routes/products"))
+app.use("/api/flipkart", require("./routes/route"))
 
 app.get("/", (req,res) => {
     res.send("Working")
@@ -17,5 +20,5 @@ app.get("/", (req,res) => {
 
 
 app.listen(5000, ()=>{
-    console.log("working on port 5000")
+    console.log("Working on port 5000")
 })
