@@ -14,7 +14,7 @@ const ProductSchema = new Schema({
         required: true
     },
     review: {
-        type: Object,
+        type: Number,
         required: true
     },
     image: {
@@ -28,6 +28,10 @@ const ProductSchema = new Schema({
     breadcrumbs: {
         type: String,
         required : true
+    },
+    index:{
+        type: Number,
+        required: true
     }
 })
 

@@ -1,10 +1,12 @@
 const supabase = require("../utils/supabaseconfig");
 
-async function allProducts(req, res) {
+async function specificProduct(req, res) {
+    const index = req.body 
     let { data: FlipkartData, error } = await supabase
         .from('FlipkartData')
         .select('*')
-        .limit(5);
+        .eq('Index', index )
+        .single();
 
     if (error) {
         console.error('Error fetching data:', error.message);
@@ -14,4 +16,4 @@ async function allProducts(req, res) {
     }
 }
 
-module.exports = allProducts;
+module.exports = specificProduct;
