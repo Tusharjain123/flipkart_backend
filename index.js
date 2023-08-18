@@ -2,9 +2,9 @@ const express = require("express")
 require("dotenv").config()
 const cors = require("cors")
 const app = express()
-// const connectToMongo = require("./utils/mongodb")
+const connectToMongo = require("./utils/mongodb")
 
-// connectToMongo()
+connectToMongo()
 
 app.use(cors({
     origin: "*"
@@ -19,6 +19,6 @@ app.get("/", (req,res) => {
 })
 
 
-app.listen(5000, ()=>{
-    console.log("Working on port 5000")
+app.listen(5001, ()=>{
+    console.log("Working on port 5001")
 })

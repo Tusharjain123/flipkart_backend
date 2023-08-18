@@ -1,6 +1,10 @@
 const mongoose =require("mongoose")
 const {Schema} = mongoose
 const ProductSchema = new Schema({
+    click: {
+        type: String,
+        required: true
+    },
     brand: {
         type: String,
         required: true
@@ -33,6 +37,8 @@ const ProductSchema = new Schema({
         type: Number,
         required: true
     }
-})
+},
+{ timestamps: true }
+)
 
 module.exports = mongoose.model("product", ProductSchema)
