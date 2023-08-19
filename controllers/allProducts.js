@@ -1,10 +1,9 @@
 const supabase = require("../utils/supabaseconfig");
 
-async function randProducts(req, res) {
+async function allProducts(req, res) {
     let { data: FlipkartData, error } = await supabase
         .from('FlipkartData')
         .select('*')
-        .limit(5);
 
     if (error) {
         console.error('Error fetching data:', error.message);
@@ -14,4 +13,4 @@ async function randProducts(req, res) {
     }
 }
 
-module.exports = randProducts;
+module.exports = allProducts;
