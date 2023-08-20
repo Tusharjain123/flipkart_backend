@@ -1,6 +1,10 @@
 const mongoose =require("mongoose")
 const {Schema} = mongoose
 const ProductSchema = new Schema({
+    user: {
+        type: Object,
+        required: true
+    },
     click: {
         type: String,
         required: true
